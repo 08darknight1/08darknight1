@@ -1,11 +1,13 @@
 # This is a basic workflow to help you get started with Actions
+# getting everything from here: https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#showing-commits-count-for-specified-year
+# and also here: https://github.com/stats-organization/github-readme-stats-action#readme
 
 name: Update README cards
 
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: "0 3 * * *" 
+    - cron: "0 14 * * *" 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   
@@ -27,12 +29,21 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+      
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=radical
           path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6
+          path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
