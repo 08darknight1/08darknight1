@@ -16,8 +16,8 @@
 -->
 
 ![Stats](./profile/stats.svg)
-
-
+![Top Languages](./profile/top-langs.svg)
+![Pinned](./profile/pin-readme-tools-github-readme-stats.svg)
 
 <!--
 **08darknight1/08darknight1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
