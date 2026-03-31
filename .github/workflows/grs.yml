@@ -2,6 +2,8 @@
 # getting everything from here: https://github.com/anuraghazra/github-readme-stats?tab=readme-ov-file#showing-commits-count-for-specified-year
 # and also here: https://github.com/stats-organization/github-readme-stats-action#readme
 
+env: { FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true }
+
 name: Update README cards
 
 # Controls when the workflow will run
