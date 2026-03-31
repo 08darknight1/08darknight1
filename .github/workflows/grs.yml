@@ -37,7 +37,7 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true&theme=radical&custom_title="My+Github+Stats:"
+          options: username=${{ github.repository_owner }}&show_icons=true&custom_title=My+Github+Stats:&theme=radical
           path: profile/stats.svg
           token: ${{ secrets.STATS_TOKEN }}
 
