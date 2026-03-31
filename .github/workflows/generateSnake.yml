@@ -1,6 +1,6 @@
 env: { FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true }
 
-name: generate snake animation
+name: Generate Snake Animation
 
 on:
   # run automatically every 24 hours
