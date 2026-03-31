@@ -5,7 +5,7 @@
 
 env: { FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true }
 
-name: Update README cards
+name: Update Github Profile README
 
 # Controls when the workflow will run
 on:
