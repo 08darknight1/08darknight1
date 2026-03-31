@@ -32,7 +32,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      
+
+      #start: cards in profile actions
       - name: Generate stats card
         uses: readme-tools/github-readme-stats-action@v1
         with:
@@ -56,7 +57,30 @@ jobs:
           git add profile/*.svg
           git commit -m "Update README cards" || exit 0
           git push
+      #end: cards in profile actions
+      #start: github profile snake
+      - uses: Platane/snk/svg-only@v3
+        with:
+          # github user name to read the contribution graph from (**required**)
+          # using action context var `github.repository_owner` or specified user
+          github_user_name: ${{ github.repository_owner }}
 
+          # list of files to generate.
+          # one file per line. Each output can be customized with options as query string.
+          #
+          #  supported options:
+          #  - palette:           A preset of color, one of [github, github-dark, github-light]
+          #  - color_snake:       Color of the snake
+          #  - color_dots:        Coma separated list of dots color.
+          #                       The first one is 0 contribution, then it goes from the low contribution to the highest.
+          #                       Exactly 5 colors are expected.
+          #  - color_background:  Color of the background (for gif only)
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9&color_background=#aaaaaa
+      #end: github profile snake
+      
       # Runs a single command using the runners shell
       ##- name: Run a one-line script
         ##run: echo Hello, world!
